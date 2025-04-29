@@ -1,98 +1,103 @@
-Unit 2: Overview of C Language
-This repository provides an educational resource for Unit 2: Overview of C Language, covering the fundamentals of C programming. It includes a practical C program (student_grade_calculator.c) that calculates a student’s average grade and determines their letter grade, serving as a real-world example. Additional example code snippets (e.g., payroll calculator, temperature converter) are provided for each topic to illustrate concepts like character set, tokens, and debugging. The README explains each topic with detailed explanations, practical examples, and references to the provided arithmetic_operations.c for continuity.
-This resource is designed for students and beginners learning C programming.
-Table of Contents
+Below is the complete content for a single `README.md` file that incorporates all the details from the provided Unit 2: Overview of C Language, formatted for a GitHub repository. This includes explanations, code examples, real-world contexts, and references to the `arithmetic_operations.c` program, all structured to be educational and beginner-friendly.
 
-Introduction to C
-C Character Set
-Tokens
-Identifiers
-Keywords
-Constants
-Variables
-Data Types
-Type Conversion
-Operators and Expressions
-Structure of a C Program
-Managing Input and Output Operations
-Common Errors in Programming
-Debugging Basics
-How to Run the Program
-Contributing
-License
+---
 
-1. Introduction to C
-Explanation
-C is a general-purpose, procedural programming language developed by Dennis Ritchie in 1972. It is efficient, flexible, and widely used for system programming, embedded systems, and applications. C is the foundation for languages like C++ and Java.
-Key Features
+# Unit 2: Overview of C Language
 
-Structured programming.
-Fast execution.
-Memory access via pointers.
-Portable.
+This repository is an educational resource for **Unit 2: Overview of C Language**, covering the fundamentals of C programming. It includes a reference to the `arithmetic_operations.c` program (which performs arithmetic operations on two user-input numbers) and example C code snippets for each topic to illustrate key concepts. The topics covered are:
 
-Practical Example: Student Grade Calculator
-student_grade_calculator.c takes marks for three subjects, computes the average, and assigns a letter grade (A, B, C, D, F).
-#include <stdio.h>
-int main() {
-    float mark1, mark2, mark3, average;
-    char grade;
-    printf("Enter marks for Subject 1 (out of 100): ");
-    scanf("%f", &mark1);
-    printf("Enter marks for Subject 2 (out of 100): ");
-    scanf("%f", &mark2);
-    printf("Enter marks for Subject 3 (out of 100): ");
-    scanf("%f", &mark3);
-    average = (mark1 + mark2 + mark3) / 3;
-    if (average >= 90) grade = 'A';
-    else if (average >= 80) grade = 'B';
-    else if (average >= 70) grade = 'C';
-    else if (average >= 60) grade = 'D';
-    else grade = 'F';
-    printf("Average: %.2f\nGrade: %c\n", average, grade);
-    return 0;
-}
+- Introduction to C
+- C Character Set
+- Tokens
+- Identifiers
+- Keywords
+- Constants
+- Variables
+- Data Types
+- Type Conversion
+- Operators and Expressions
+- Structure of a C Program
+- Managing Input and Output Operations
+- Common Errors in Programming
+- Debugging Basics
 
-Additional Example
-A library system welcome message:
+Each topic includes a detailed explanation, a practical code example with a real-world context, and references to the `arithmetic_operations.c` program where applicable. This repository is designed for students and beginners learning C programming as part of a computer science curriculum.
+
+## Table of Contents
+
+- [Introduction to C](#1-introduction-to-c)
+- [C Character Set](#2-c-character-set)
+- [Tokens](#3-tokens)
+- [Identifiers](#4-identifiers)
+- [Keywords](#5-keywords)
+- [Constants](#6-constants)
+- [Variables](#7-variables)
+- [Data Types](#8-data-types)
+- [Type Conversion](#9-type-conversion)
+- [Operators and Expressions](#10-operators-and-expressions)
+- [Structure of a C Program](#11-structure-of-a-c-program)
+- [Managing Input and Output Operations](#12-managing-input-and-output-operations)
+- [Common Errors in Programming](#13-common-errors-in-programming)
+- [Debugging Basics](#14-debugging-basics)
+- [How to Run the Code](#how-to-run-the-code)
+- [Contributing](#contributing)
+- [License](#license)
+
+## 1. Introduction to C
+
+**Explanation**: C is a general-purpose, procedural programming language developed by Dennis Ritchie in 1972 at Bell Labs. Known for its efficiency and low-level control, C is used in system programming, embedded systems, and application development. It forms the foundation for languages like C++ and Java.
+
+**Key Features**:
+- Structured programming with functions and control structures.
+- Fast execution with minimal overhead.
+- Direct memory access via pointers.
+- Portable across platforms.
+
+**Example Code: Library Menu**  
+A program to display a menu for a library management system, demonstrating C’s simplicity.
+
+```c
 #include <stdio.h>
 int main() {
     printf("Welcome to the Library Management System!\n");
-    printf("1. Borrow Book\n2. Return Book\n");
+    printf("1. Borrow Book\n2. Return Book\n3. Exit\n");
     return 0;
 }
+```
 
-Real-Life Context: Used in educational software and library kiosks.
-2. C Character Set
-Explanation
-The C character set includes letters (A-Z, a-z), digits (0-9), special characters (e.g., +, @), and whitespace (space, tab, newline).
-Example (From student_grade_calculator.c)
-Uses letters (m, a, r, k), digits (90), and special characters (/ in average = ... / 3).
-Additional Example
-Password character validator:
+**Real-Life Context**: Used in user interfaces for library kiosks or ticketing systems.  
+**Relation to `arithmetic_operations.c`**: Like the arithmetic program, this example uses basic output to interact with users, a core feature of C.
+
+## 2. C Character Set
+
+**Explanation**: The C character set includes letters (A-Z, a-z), digits (0-9), special characters (e.g., +, @, ;), and whitespace (space, tab, newline). These form the building blocks of C code.
+
+**Example Code: Password Character Display**  
+A program to show valid characters for a password validator.
+
+```c
 #include <stdio.h>
 int main() {
     char letter = 'A';
     char digit = '5';
     char special = '@';
-    printf("Valid password characters:\nLetter: %c\nDigit: %c\nSpecial: %c\n", letter, digit, special);
+    printf("Valid password characters:\n");
+    printf("Letter: %c\nDigit: %c\nSpecial: %c\n", letter, digit, special);
     return 0;
 }
+```
 
-Real-Life Context: Password validation in login systems.
-3. Tokens
-Explanation
-Tokens are the smallest units in C: keywords, identifiers, constants, operators, and symbols.
-Example (From student_grade_calculator.c)
-float average = (mark1 + mark2 + mark3) / 3; includes:
+**Real-Life Context**: Password validation in login systems ensures only allowed characters are used.  
+**Relation to `arithmetic_operations.c`**: The arithmetic program uses characters like +, /, and digits in prompts (e.g., "Enter first number: ").
 
-Keywords: float
-Identifiers: average, mark1, mark2, mark3
-Constants: 3
-Operators: =, +, /
+## 3. Tokens
 
-Additional Example
-Rectangle area calculator:
+**Explanation**: Tokens are the smallest units in a C program, including keywords (e.g., `int`), identifiers (e.g., variable names), constants (e.g., 10), operators (e.g., +), and symbols (e.g., ;).
+
+**Example Code: Rectangle Area Calculator**  
+A program to calculate the area of a rectangle, highlighting tokens.
+
+```c
 #include <stdio.h>
 int main() {
     int length = 10;
@@ -101,15 +106,30 @@ int main() {
     printf("Area: %d\n", area);
     return 0;
 }
+```
 
-Real-Life Context: Architectural software for area calculations.
-4. Identifiers
-Explanation
-Identifiers are user-defined names for variables/functions. Rules: start with a letter/underscore, include letters/digits/underscores, case-sensitive.
-Example (From student_grade_calculator.c)
-Identifiers: mark1, mark2, mark3, average, grade.
-Additional Example
-Employee details:
+**Tokens**:
+- Keywords: `int`, `return`
+- Identifiers: `length`, `width`, `area`
+- Constants: `10`, `5`
+- Operators: `=`, `*`
+- Symbols: `;`, `()`, `{}`
+
+**Real-Life Context**: Used in architectural software for space planning.  
+**Relation to `arithmetic_operations.c`**: Similar use of operators (`*`) and constants (e.g., 3 in division).
+
+## 4. Identifiers
+
+**Explanation**: Identifiers are user-defined names for variables, functions, etc. Rules:
+- Start with a letter or underscore.
+- Include letters, digits, underscores.
+- Case-sensitive.
+- Not a keyword.
+
+**Example Code: Employee Details**  
+A program to store and display employee information.
+
+```c
 #include <stdio.h>
 int main() {
     int employee_id = 101;
@@ -118,33 +138,45 @@ int main() {
     printf("Employee ID: %d\nSalary: %.2f\nGrade: %c\n", employee_id, employee_salary, employee_grade);
     return 0;
 }
+```
 
-Real-Life Context: HR systems for employee records.
-5. Keywords
-Explanation
-Keywords are reserved words (e.g., int, if, return) with predefined meanings.
-Example (From student_grade_calculator.c)
-Keywords: int, float, char, if, else, return.
-Additional Example
-Number classifier:
+**Real-Life Context**: HR systems use identifiers for employee records.  
+**Relation to `arithmetic_operations.c`**: Uses identifiers like `num1`, `num2` for variables.
+
+## 5. Keywords
+
+**Explanation**: Keywords are reserved words (e.g., `int`, `if`, `return`) with specific meanings, not usable as identifiers.
+
+**Example Code: Number Classifier**  
+A program to check if a number is positive.
+
+```c
 #include <stdio.h>
 int main() {
     int number;
     printf("Enter a number: ");
     scanf("%d", &number);
-    if (number > 0) printf("Positive\n");
-    else printf("Non-positive\n");
+    if (number > 0) {
+        printf("Positive\n");
+    } else {
+        printf("Non-positive\n");
+    }
     return 0;
 }
+```
 
-Real-Life Context: Financial systems checking balances.
-6. Constants
-Explanation
-Constants are fixed values: integers (10), floating-point (3.14), characters ('A'), strings ("Hello").
-Example (From student_grade_calculator.c)
-Constants: 3, 90, 'A', "Average: %.2f\n".
-Additional Example
-Circle area:
+**Keywords**: `int`, `if`, `else`, `return`  
+**Real-Life Context**: Financial systems check positive balances.  
+**Relation to `arithmetic_operations.c`**: Uses `if` for zero-division check.
+
+## 6. Constants
+
+**Explanation**: Constants are fixed values: integers (`10`), floating-point (`3.14`), characters (`'A'`), strings (`"Hello"`).
+
+**Example Code: Circle Area**  
+A program to calculate the area of a circle using a constant.
+
+```c
 #include <stdio.h>
 const float PI = 3.14159;
 int main() {
@@ -153,15 +185,19 @@ int main() {
     printf("Circle Area: %.2f\n", area);
     return 0;
 }
+```
 
-Real-Life Context: Engineering software for geometric calculations.
-7. Variables
-Explanation
-Variables are named memory locations that store changeable data.
-Example (From student_grade_calculator.c)
-Variables: mark1, mark2, mark3, average, grade.
-Additional Example
-Inventory tracker:
+**Real-Life Context**: Engineering software for geometric calculations.  
+**Relation to `arithmetic_operations.c`**: Uses constants like `'0'` in output strings.
+
+## 7. Variables
+
+**Explanation**: Variables are named memory locations that store changeable data, declared with a data type.
+
+**Example Code: Inventory Tracker**  
+A program to update stock levels.
+
+```c
 #include <stdio.h>
 int main() {
     int stock_quantity = 100;
@@ -170,15 +206,19 @@ int main() {
     printf("Remaining Stock: %d\n", stock_quantity);
     return 0;
 }
+```
 
-Real-Life Context: Inventory management systems.
-8. Data Types
-Explanation
-Data types define variable storage: int, float, double, char, etc.
-Example (From student_grade_calculator.c)
-float for marks, char for grade, int for main.
-Additional Example
-Product details:
+**Real-Life Context**: Inventory management in retail.  
+**Relation to `arithmetic_operations.c`**: Uses variables `num1`, `num2`.
+
+## 8. Data Types
+
+**Explanation**: Data types define variable storage: `int` (4 bytes), `float` (4 bytes), `double` (8 bytes), `char` (1 byte), etc.
+
+**Example Code: Product Details**  
+A program to store product information.
+
+```c
 #include <stdio.h>
 int main() {
     int product_id = 5001;
@@ -189,15 +229,19 @@ int main() {
            product_id, product_price, product_category, discount_rate);
     return 0;
 }
+```
 
-Real-Life Context: E-commerce product listings.
-9. Type Conversion
-Explanation
-Type conversion changes data types: implicit (automatic) or explicit (casting).
-Example (From student_grade_calculator.c)
-average = (mark1 + mark2 + mark3) / 3; (implicit int to float).
-Additional Example
-Temperature converter:
+**Real-Life Context**: E-commerce product listings.  
+**Relation to `arithmetic_operations.c`**: Uses `int` for `num1`, `num2`.
+
+## 9. Type Conversion
+
+**Explanation**: Type conversion changes data types: implicit (automatic) or explicit (casting).
+
+**Example Code: Temperature Converter**  
+A program to convert Celsius to Fahrenheit.
+
+```c
 #include <stdio.h>
 int main() {
     int celsius = 25;
@@ -205,15 +249,19 @@ int main() {
     printf("Temperature: %.2f°F\n", fahrenheit);
     return 0;
 }
+```
 
-Real-Life Context: Weather apps.
-10. Operators and Expressions
-Explanation
-Operators perform operations; expressions combine operands and operators.
-Example (From student_grade_calculator.c)
-average = (mark1 + mark2 + mark3) / 3; uses +, /, =.
-Additional Example
-Net pay calculator:
+**Real-Life Context**: Weather apps.  
+**Relation to `arithmetic_operations.c`**: Implicit conversion in division (`num1 / num2`).
+
+## 10. Operators and Expressions
+
+**Explanation**: Operators include arithmetic (`+`, `-`), relational (`>`, `==`), logical (`&&`), etc. Expressions combine operands and operators.
+
+**Example Code: Net Pay Calculator**  
+A program to compute net pay after tax.
+
+```c
 #include <stdio.h>
 int main() {
     float gross_pay = 5000.0;
@@ -223,15 +271,19 @@ int main() {
     printf("Gross Pay: %.2f\nTax: %.2f\nNet Pay: %.2f\n", gross_pay, tax, net_pay);
     return 0;
 }
+```
 
-Real-Life Context: Payroll systems.
-11. Structure of a C Program
-Explanation
-Structure: preprocessor directives, main function, declarations, statements, return.
-Example (From student_grade_calculator.c)
-Includes #include, main, variable declarations, and return 0.
-Additional Example
-Countdown timer:
+**Real-Life Context**: Payroll systems.  
+**Relation to `arithmetic_operations.c`**: Uses `+`, `-`, `*`, `/`, `%`.
+
+## 11. Structure of a C Program
+
+**Explanation**: A C program includes preprocessor directives (`#include`), `main` function, declarations, statements, and `return`.
+
+**Example Code: Countdown Timer**  
+A program to display a countdown.
+
+```c
 #include <stdio.h>
 int main() {
     int seconds = 5;
@@ -242,15 +294,19 @@ int main() {
     printf("Time's up!\n");
     return 0;
 }
+```
 
-Real-Life Context: Quiz apps or timers.
-12. Managing Input and Output Operations
-Explanation
-scanf for input, printf for output, with format specifiers.
-Example (From student_grade_calculator.c)
-scanf("%f", &mark1);, printf("Average: %.2f\n", average);.
-Additional Example
-User feedback:
+**Real-Life Context**: Quiz apps or appliance timers.  
+**Relation to `arithmetic_operations.c`**: Follows same structure with `#include` and `main`.
+
+## 12. Managing Input and Output Operations
+
+**Explanation**: Input uses `scanf`; output uses `printf` with format specifiers (`%d`, `%f`, `%c`).
+
+**Example Code: User Feedback**  
+A program to collect feedback.
+
+```c
 #include <stdio.h>
 int main() {
     char feedback[50];
@@ -262,33 +318,47 @@ int main() {
     printf("Feedback: %s\nRating: %d/5\n", feedback, rating);
     return 0;
 }
+```
 
-Real-Life Context: Customer feedback systems.
-13. Common Errors in Programming
-Explanation
-Errors: syntax (e.g., missing ;), logical (e.g., wrong logic), runtime (e.g., division by zero).
-Example (From student_grade_calculator.c)
-Logical error: Wrong threshold (average >= 90 vs. >= 85).
-Additional Example
-Error-prone code:
+**Real-Life Context**: Customer feedback systems.  
+**Relation to `arithmetic_operations.c`**: Uses `scanf` and `printf` for I/O.
+
+## 13. Common Errors in Programming
+
+**Explanation**: Errors include:
+- **Syntax**: Missing `;`, wrong syntax.
+- **Logical**: Incorrect logic.
+- **Runtime**: Division by zero, invalid input.
+
+**Example Code: Error-Prone Division**  
+A program with error handling.
+
+```c
 #include <stdio.h>
 int main() {
     int x = 10;
     int y = 0;
-    if (y != 0) printf("Result: %d\n", x / y); // Avoids runtime error
-    else printf("Error: Division by zero\n");
-    printf("Done\n"); // Fixed syntax error
+    if (y != 0) {
+        printf("Result: %d\n", x / y);
+    } else {
+        printf("Error: Division by zero\n");
+    }
+    printf("Done\n");
     return 0;
 }
+```
 
-Real-Life Context: Banking software error handling.
-14. Debugging Basics
-Explanation
-Debugging uses print statements, compilers, IDEs, and testing.
-Example (From student_grade_calculator.c)
-printf("Debug: mark1 = %.2f\n", mark1); to verify input.
-Additional Example
-Square calculator:
+**Real-Life Context**: Banking software prevents calculation errors.  
+**Relation to `arithmetic_operations.c`**: Handles division by zero similarly.
+
+## 14. Debugging Basics
+
+**Explanation**: Debugging uses print statements, compilers, IDEs, and testing to fix errors.
+
+**Example Code: Square Calculator**  
+A program with debugging aids.
+
+```c
 #include <stdio.h>
 int main() {
     int num;
@@ -300,22 +370,63 @@ int main() {
     printf("Square of %d is %d\n", num, square);
     return 0;
 }
+```
 
-Real-Life Context: Robotics sensor calculations.
-How to Run the Program
+**Real-Life Context**: Robotics sensor calculations.  
+**Relation to `arithmetic_operations.c`**: Could add `printf` to debug `num1`, `num2`.
 
-Prerequisites: Install gcc (e.g., brew install gcc on macOS).
-Steps:
-Clone: git clone <repository-url>
-Compile: gcc student_grade_calculator.c -o student_grade_calculator
-Run: ./student_grade_calculator
-Test examples by creating .c files and compiling similarly.
+## How to Run the Code
 
+**Prerequisites**:
+- Install `gcc` (e.g., on macOS: `brew install gcc`).
+- Use a terminal and text editor/IDE.
 
+**Steps**:
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
+2. Compile a program (e.g., save `arithmetic_operations.c` or create a `.c` file from examples):
+   ```bash
+   gcc arithmetic_operations.c -o arithmetic_operations
+   ```
+3. Run:
+   ```bash
+   ./arithmetic_operations
+   ```
+4. For other examples, save the code as `.c` files (e.g., `rectangle_area.c`), compile, and run similarly.
 
-Contributing
-Add examples, improve student_grade_calculator.c, or enhance the README. Fork, branch, commit, push, and open a pull request.
-License
-MIT License. See LICENSE file.
-Contact
-Open an issue on GitHub for questions.
+**Example Output (for `arithmetic_operations.c`)**:
+```
+Enter first number: 10
+Enter second number: 5
+Addition (+): 10 + 5 = 15
+Subtraction (-): 10 - 5 = 5
+Multiplication (*): 10 * 5 = 50
+Division (/): 10 / 5 = 2
+Modulus (%): 10 % 5 = 0
+```
+
+## Contributing
+
+Contributions are welcome! You can:
+- Add more C programs (e.g., extend `arithmetic_operations.c` with input validation).
+- Enhance examples or add new real-world scenarios.
+- Improve the README with additional details.
+
+To contribute:
+1. Fork the repository.
+2. Create a branch:
+   ```bash
+   git checkout -b feature-branch
+   ```
+3. Commit changes:
+   ```bash
+   git commit -m "Add feature"
+   ```
+4. Push:
+   ```bash
+   git push origin feature-branch
+   ```
+5. Open a pull request.
